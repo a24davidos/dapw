@@ -7,11 +7,11 @@
 
     - O método HTTP que se utiliza é *GET*. Este método se usa para solicitar un recurso do servidor, neste caso, unha imaxe.
 
-3. Cuál es el path del recurso al que se hace la petición?
+3. Cal é o path do recurso do que se fai a petición?
 
     - O path do recurso que se solicita é  *`/wp-content/themes/sclemente/img/favicon.png`*. 
 
-4. Cuál es el host del recurso al que se hace la petición?
+4. Cal é o host do recurso do que se fai a petición?
 
     - O host do recurso é *`www.iessanclemente.net`*
 
