@@ -1,0 +1,1 @@
+A resposta neste caso é HTTP/1.1 200 OK e o tipo de MIME é `text/html`, é dicir texto HTML
