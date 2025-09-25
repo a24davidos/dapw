@@ -13,6 +13,7 @@ def ler_har(path):
     Returns:
         list: Devolve unha lista de datos
     """
+    
     with open(path, 'r', encoding='utf-8') as ficheiro:
         datos = json.load(ficheiro)
     return datos
@@ -27,6 +28,10 @@ def filtrar_json_entries(har_datos):
     Returns:
         list: Devólvese un array cos datos xa filtrados
     """
+    
+    if not(type(har_datos) is dict):
+        raise ValueError
+    
     # Lista donde guardamos el json
     json_entries = []
     
@@ -52,7 +57,7 @@ def filtrar_json_entries(har_datos):
 
 def filtrar_dominios(har_datos):
     
-    if(not(har_datos is type(list))):
+    if not(type(har_datos) is list):
         raise ValueError
     
     # Inicializo a lista de dominio
