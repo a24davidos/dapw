@@ -56,9 +56,19 @@ def filtrar_json_entries(har_datos):
 
 
 def filtrar_dominios(har_datos):
-    
+    """Función que filtra os dominios dunha lista
+
+    Args:
+        har_datos (list): Lista de datos
+
+    Raises:
+        TypeError: Se o tipo non é o correcto
+
+    Returns:
+        list: Lista cos dominios
+    """
     if not(type(har_datos) is list):
-        raise ValueError
+        raise TypeError
     
     # Inicializo a lista de dominio
     dominios = []
@@ -84,7 +94,11 @@ def filtrar_dominios(har_datos):
             
     return dominios
         
-        
+def gardar_lista_en_ficheiro(path, lista):
+    with open(path, 'w', encoding='utf-8') as ficheiro:
+        for liña in lista:
+            ficheiro.write(liña + '\n')
+ 
 
 # Poñemos a ruta completa do ficheiro HAR
 ruta = "datos.har"
@@ -99,6 +113,9 @@ except Exception as e:
     print(f"Erro ao ler o ficheiro HAR: {e}")
 
 #Collemos o json cos tipo mime application/json
-diccionario = filtrar_json_entries(contido)
+lista_json = filtrar_json_entries(contido)
 
-print(filtrar_dominios(diccionario))
+#Agora collemos de esa lista json os dominios
+lista_dominios = filtrar_dominios(lista_json)
+
+gardar_lista_en_ficheiro("dominios.txt", lista_dominios)
