@@ -1,3 +1,0 @@
-mail.google.com
-chat.google.com
-mail-ads.google.com
